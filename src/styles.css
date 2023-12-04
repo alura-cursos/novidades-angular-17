@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+/*  You can add global styles to this file, and also import other style files */
+
+
+@keyframes fade-in{
+  from{
+    opacity: 50%;
+  }
+}
+
+
+@keyframes fade-out{
+  to{
+    opacity: 0;
+  }
+}
+
+@keyframes slide-right{
+  from{
+    transform: translateX(33px);
+  }
+}
+
+@keyframes slide-left{
+  to{
+    transform: translateX(-33px);
+  }
+}
+
+::view-transition-old(root){
+  animation: 1s fade-out, 1s slide-left;
+}
+::view-transition-new(root){
+  animation: 2s fade-in, 1s slide-right;
+}
+
+

@@ -1,0 +1,25 @@
+<!-- ng if -->
+@if (listaDeEstudos.length > 0) { A lista tem {{ listaDeEstudos.length }} itens
+} @else { A lista está vazia! }
+
+<!-- ng for -->
+<ul>
+  @for (conteudo of listaDeEstudos; track $index) {
+  <li>{{ conteudo }}</li>
+  } @empty {
+  <p>Preencha a lista para visualizar itens!</p>
+  }
+</ul>
+
+<!-- ng switch -->
+@switch (nivelEstudante) { @case ('iniciante') {
+<p>Comece por HTML, CSS e JS</p>
+} @case ('intermediario') {
+<p>Escolha seu framework!</p>
+} @default {
+<p>Vamos estudar?</p>
+} }
+
+<button (click)="redirectToConteudos()">Quero estudar!</button>
+
+
